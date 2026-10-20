@@ -1,0 +1,52 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    --app-font-scale: 1;
+    font-family: 'Cairo', 'Noto Sans Arabic', 'IBM Plex Sans Arabic', system-ui, -apple-system, sans-serif;
+  }
+
+  body {
+    font-size: calc(1rem * var(--app-font-scale));
+    overflow-x: hidden;
+    font-family: 'Cairo', 'Noto Sans Arabic', 'IBM Plex Sans Arabic', system-ui, -apple-system, sans-serif;
+  }
+
+  code, pre, .font-mono {
+    font-family: 'JetBrains Mono', 'Liberation Mono', monospace, 'Noto Sans Arabic', 'Cairo';
+  }
+
+  .font-sans, [dir="rtl"] {
+    font-family: 'Cairo', 'Noto Sans Arabic', 'IBM Plex Sans Arabic', system-ui, -apple-system, sans-serif !important;
+  }
+}
+
+/* Custom cyber scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #020617;
+}
+::-webkit-scrollbar-thumb {
+  background: #1e293b;
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #334155;
+}
+
+/* Print styles for certificates and exit tickets */
+@media print {
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-only {
+    display: block !important;
+  }
+}
